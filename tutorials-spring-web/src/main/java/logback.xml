@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="A1" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d %5p %c{1} | %X{user} | %X{hostname} | %X{remoteaddr} - %m%n</pattern>
+    </encoder>
+  </appender>
+  
+  <logger name="ch.qos.logback" level="WARN"/>
+  <logger name="org.springframework" level="DEBUG"/>
+  
+  <logger name="org.hibernate.SQL" level="DEBUG"/>
+  <logger name="com.tutorials" level="DEBUG"/>
+   
+  <root level="INFO">
+    <appender-ref ref="A1"/>
+  </root>
+</configuration>
