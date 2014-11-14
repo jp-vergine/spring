@@ -87,6 +87,8 @@ var apps = function() {
 
 			var oMyForm = new FormData();
 			oMyForm.append("file", file.files[0]);
+			$('#upload-result').html("Processing....");
+			$('#upload-submit').hide();
 			
 			$.ajax({
 				url : 'upload',
@@ -96,11 +98,17 @@ var apps = function() {
 				contentType : false,
 				type : 'POST',
 				
+				complete:function(data){
+					$('#upload-submit').show();
+				},
 				success : function(data) {
-					$('#upload-result').html(data);
+					$('#upload-result').html(
+							"File imported<br/><br/>" +
+							"If file not in cache, you have 5 sec. to download it here<br/><br/>" +
+							"<a href='/download/"+data+"'>Download " + data + "</a>");
 				},
 				error: function(jqXHR,error, errorThrown, data) {  
-					$('#upload-result').html(new Date() +  " > Erreur: " + jqXHR.status + " > " + jqXHR.responseText);
+					$('#upload-result').html("Erreur: Impossble de t&eacute;l&eacute;charger un fichier de plus de 2 Mo");
 				}
 			});
 			return false;

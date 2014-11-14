@@ -130,7 +130,7 @@
                     <li class="active">
                         <a href="#">1</a>
                     </li>
-                    <li>
+                    <li> 
                         <a href="#">2</a>
                     </li>
                     <li>

@@ -21,9 +21,8 @@
 
 	<filter>
 	  <filter-name>MDCInsertingServletFilter</filter-name>
-	  <filter-class>
-	    ch.qos.logback.classic.helpers.MDCInsertingServletFilter
-	  </filter-class>
+	  <filter-class>ch.qos.logback.classic.helpers.MDCInsertingServletFilter</filter-class>
+	  <async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>
 	  <filter-name>MDCInsertingServletFilter</filter-name>
@@ -33,6 +32,7 @@
 	<filter>
 		<filter-name>LogContextFilter</filter-name>
 		<filter-class>com.tutorials.spring.filter.LogContextFilter</filter-class>
+		<async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>
 		<filter-name>LogContextFilter</filter-name>

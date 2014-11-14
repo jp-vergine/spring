@@ -108,6 +108,12 @@
 			<version>${logback.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava-io</artifactId>
+			<version>r03</version>
+		</dependency>
+
 
 		<!-- Apache Commons FileUpload -->
 		<dependency>
